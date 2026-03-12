@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime, timezone
 
 # Create Flask app instance
 app = Flask(__name__)
@@ -13,7 +14,7 @@ class Task(db.Model):
     # db.Column represents a col in the database
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(200), nullable=False)
-    # add DateTime column later
+    date_created = db.Column(db.DateTime, default=datetime.now())
 
 # Flask route to display all tasks
 @app.route('/', methods=['GET', 'POST'])

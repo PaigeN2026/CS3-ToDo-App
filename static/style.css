@@ -1,0 +1,21 @@
+body {
+    background: rgb(130, 130, 168);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+}
+
+table {
+    margin: auto;
+    border: 3px solid rgb(213, 213, 225);
+    padding: 5px;
+}
+
+a {
+    text-decoration: none;
+    text_align: center;
+}
+
+a:hover {
+    transform: scale(1.1)
+}
