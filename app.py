@@ -34,6 +34,15 @@ def index():
     all_tasks = Task.query.all()
     return render_template('index.html', tasks=all_tasks)
 
+# Route for deleting tasks from db
+@app.route('/delete/<int:task_id>')
+def delete(task_id):
+    task = Task.query.get(task_id)
+    if task: 
+        db.session.delete(task)
+        db.session.commit()
+    return redirect('/')
+
 # Create the database in the main method
 if __name__ == '__main__': 
     with app.app_context():
